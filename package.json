@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@truefoundry/trueforge-sdk": "^0.1.3",
+    "@truefoundry/trueforge-ui": "^0.2.4",
     "next": "16.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8"
