@@ -25,6 +25,7 @@ and waits for your approval before anything sends.
 - [The Problem](#the-problem)
 - [What It Does](#what-it-does)
 - [Demo](#demo)
+  - [Full Screenshot Walkthrough](./DEMO.md)
 - [How TrueForge Is Used](#how-trueforge-is-used)
 - [Architecture](#architecture)
 - [Tech Stack](#tech-stack)
@@ -65,12 +66,18 @@ approval.
 Every step above is visible while it happens — not a spinner, an actual
 live trace of what the agent is doing.
 
-## Youtube Demo
+## Demo
 
 <!-- Replace with your YouTube video embed once uploaded -->
+Youtube Demo →
+
 [![Watch the demo](https://img.youtube.com/vi/mPoYDK-e68o/maxresdefault.jpg)](https://youtu.be/mPoYDK-e68o)
 
 *(Click the thumbnail above to watch the full walkthrough.)*
+
+OR
+
+[**→ View the full step-by-step screenshot walkthrough**](./DEMO.md)
 
 ## How TrueForge Is Used
 
