@@ -9,7 +9,8 @@ and waits for your approval before anything sends.
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![TrueForge](https://img.shields.io/badge/Built%20on-TrueForge-6366F1)](https://trueforge.dev)
+[![TrueForge](https://img.shields.io/badge/Built%20on-TrueForge-white)](https://trueforge.dev)
+[![Qodo](https://img.shields.io/badge/Code%20review-Qodo-6366F1)](https://app.qodo.ai)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
