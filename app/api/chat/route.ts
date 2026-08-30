@@ -12,19 +12,26 @@ export async function POST(req: NextRequest) {
 
   const session = sessionId
     ? { id: sessionId }
-    : (await client.sessions.create({ agent: { name: "outreach-agent" } })).data;
+    : (await client.sessions.create({ agent: { name: "outreach-agent" } }))
+        .data;
 
-  const stream = await client.sessions.createTurnStream(session.id, { input });
+  const stream = await client.sessions.createTurnStream(session.id, {
+    input: input as any,
+  });
 
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
     async start(controller) {
       controller.enqueue(
-        encoder.encode(`event: session\ndata: ${JSON.stringify({ sessionId: session.id })}\n\n`)
+        encoder.encode(
+          `event: session\ndata: ${JSON.stringify({ sessionId: session.id })}\n\n`,
+        ),
       );
       try {
         for await (const { data: event } of stream.withMetadata()) {
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(event)}\n\n`));
+          controller.enqueue(
+            encoder.encode(`data: ${JSON.stringify(event)}\n\n`),
+          );
         }
       } finally {
         controller.close();
@@ -33,6 +40,10 @@ export async function POST(req: NextRequest) {
   });
 
   return new Response(readable, {
-    headers: { "Content-Type": "text/event-stream", "Cache-Control": "no-cache", Connection: "keep-alive" },
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+    },
   });
 }
