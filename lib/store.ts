@@ -2,6 +2,7 @@ export type OutreachStatus = "drafting" | "awaiting_approval" | "sent" | "saved_
 
 export type OutreachRecord = {
   id: string;
+  senderName: string;
   company: string;
   role: string;
   recipientName?: string;

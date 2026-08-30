@@ -3,13 +3,35 @@ import { createOutreach, listOutreach } from "@/lib/store";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { company, role, recipientName, recipientEmail, background } = body;
-
-  if (!company || !role || !background) {
-    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  const {
+    senderName,
+    company,
+    role,
+    recipientName,
+    recipientEmail,
+    background,
+  } = body;
+  if (
+    !senderName ||
+    !company ||
+    !role ||
+    !recipientName ||
+    !recipientEmail ||
+    !background
+  ) {
+    return NextResponse.json(
+      { error: "Missing required fields" },
+      { status: 400 },
+    );
   }
-
-  const record = createOutreach({ company, role, recipientName, recipientEmail, background });
+  const record = createOutreach({
+    senderName,
+    company,
+    role,
+    recipientName,
+    recipientEmail,
+    background,
+  });
   return NextResponse.json(record);
 }
 
